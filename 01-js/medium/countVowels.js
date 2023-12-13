@@ -5,8 +5,18 @@
   Once you've implemented the logic, test your code by running
 */
 
+function isVowel(char) {
+  return ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'].includes(char);
+}
+
 function countVowels(str) {
-    // Your code here
+    let res = 0;
+    for (const element of str) {
+      if (isVowel(element)) {
+        res++;
+    }
+  }
+    return res;
 }
 
 module.exports = countVowels;
