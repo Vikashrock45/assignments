@@ -45,8 +45,7 @@ class Calculator {
     if (isNaN(calculatedValue) || !isFinite(calculatedValue)) {
         throw new Error("Invalid expression");
     }
-    this.result = calculatedValue;
-    return calculatedValue;
+    return this.result
   }
 }
 

@@ -7,9 +7,9 @@
 
 function findLargestElement(numbers) {
     let maxm = numbers[0];
-    for (let index = 0; index < numbers.length; index++) {
-        if(numbers[index] > maxm) {
-            maxm = numbers[index];
+    for (const element of numbers) {
+        if(element > maxm) {
+            maxm = element;
         }
     }
     return maxm;
