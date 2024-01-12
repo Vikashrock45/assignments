@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 
-const express = require('express');
-
 // Connect to MongoDB
-
-mongoose.connect('mongodb+srv://vikashr4545:<password>@cluster0.8qfznw6.mongodb.net/');
-
+mongoose.connect('mongodb+srv://<password>:<password>@cluster0.8qfznw6.mongodb.net/');
 // Define schemas
 const AdminSchema = new mongoose.Schema({
     username: {

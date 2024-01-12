@@ -23,7 +23,7 @@ router.post('/signup', async (req, res) => {
         // Create a new admin
         await Admin.create({
             username,
-            password,
+            password
         });
 
         return res.status(201).json({

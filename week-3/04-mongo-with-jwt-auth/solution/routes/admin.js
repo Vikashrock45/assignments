@@ -12,6 +12,13 @@ router.post('/signup', async (req, res) => {
     const password = req.body.password;
 
     // check if a user with this username already exists
+    const existingAdmin = await Admin.findOne({username: username})
+    if(existingAdmin) {
+        return res.status(403).json({
+            message: 'Admin already exists with this username'
+        });
+    }
+
     await Admin.create({
         username: username,
         password: password
@@ -28,15 +35,14 @@ router.post('/signin', async (req, res) => {
     const password = req.body.password;
     console.log(JWT_SECRET);
 
-    const user = await User.find({
+    const admin = await Admin.find({
         username,
         password
     })
-    if (user) {
+    if (admin) {
         const token = jwt.sign({
             username
         }, JWT_SECRET);
-
         res.json({
             token
         })
